@@ -25,8 +25,8 @@ const Home = ()=>{
       loader ? <div className='flex justify-center items-center m-[20rem]'>
         <Loader/>
       </div>:
-      allChallanges.map((challange:any)=>(
-        <Link href={`/challenge/${challange.id}`}>
+      allChallanges.map((challange:any, idx:number)=>(
+        <Link key={idx} href={`/challenge/${challange.id}`}>
         <div className="max-w-6xl mx-auto my-8 flex justify-center">
           <div className="bg-white shadow-md rounded-lg flex flex-col md:flex-row items-center p-6 w-[80%]">
             
