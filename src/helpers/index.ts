@@ -25,7 +25,7 @@ const takeScreenshot = async (id: string, html: string, ...selectors: string[]) 
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    const url = ["http://localhost:3000", 'screenshot', id].join('/');
+    const url = [process.env.PUBLIC_URL, 'screenshot', id].join('/');
 
     if (!url) {
       throw Error('invalid url - make sure to set the PUBLIC_URL env properly');
